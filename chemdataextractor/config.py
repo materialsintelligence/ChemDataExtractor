@@ -114,4 +114,4 @@ class Config(MutableMapping):
 
 
 #: Global config instance.
-config = Config(data_dir="models")
+config = Config()
