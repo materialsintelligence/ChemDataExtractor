@@ -137,6 +137,9 @@ _model_cache = {}
 def load_model(path):
     """Load a model from a pickle file in the data directory. Cached so model is only loaded once."""
     abspath = find_data(path)
+    print(path)
+    print(abspath)
+    print(' ')
     cached = _model_cache.get(abspath)
     if cached is not None:
         log.debug('Using cached copy of %s' % path)
