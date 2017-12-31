@@ -114,9 +114,10 @@ def get_data_dir():
     """Return path to the data directory."""
     # Use data_dir config value if set, otherwise use OS-dependent data directory given by appdirs
     #return config.get('data_dir', appdirs.user_data_dir('ChemDataExtractor'))
-    cwd = os.getcwd()
-    return config.get('data_dir', '{}/src/chemdataextractor/chemdataextractor'.format(cwd))
-
+    import os
+    path = os.path.abspath(__file__)
+    cwd = os.path.dirname(path)
+    return config.get('data_dir', '{}/'.format(cwd))
 
 
 def find_data(path, warn=True):
